@@ -1,0 +1,60 @@
+.love-message {
+  position: absolute;
+  top: 8vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 5vmin, 52px);
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 5px #fff,
+    0 0 15px #ff9de2,
+    0 0 30px #ff69c4;
+
+  opacity: 0;
+
+  animation:
+    love-message-appear 2s 4.5s ease forwards,
+    love-message-glow 2.5s 6.5s ease-in-out infinite;
+}
+
+@keyframes love-message-appear {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px) scale(.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes love-message-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 15px #ff9de2,
+      0 0 30px #ff69c4;
+  }
+
+  50% {
+    text-shadow:
+      0 0 8px #fff,
+      0 0 25px #ffb5e8,
+      0 0 50px #ff69c4;
+  }
+}
+
+@media (max-width: 600px) {
+  .love-message {
+    top: 7vmin;
+    font-size: 8vmin;
+  }
+}
